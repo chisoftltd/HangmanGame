@@ -73,3 +73,15 @@ def hangman():
                   "  |      \n"
                   "__|__\n")
             print("Wrong guess. " + str(limit - count) + " guesses remaining\n")
+            
+        elif count == 2:
+            time.sleep(1)
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("Wrong guess. " + str(limit - count) + " guesses remaining\n")
