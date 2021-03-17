@@ -18,6 +18,7 @@ def main():
     global play_game
     words_to_guess = ["january","border","image","film","promise","kids","lungs","doll","rhyme","damage","plants"]
     word = random.choice(words_to_guess)
+    print(word, " is the word")
     length = len(word)
     count = 0
     display = '_' * length
@@ -108,4 +109,40 @@ def hangman():
                  "  |      \n"
                  "  |      \n"
                  "__|__\n")
-           print("Wrong guess. " + str(limit - count) + " guesses remaining\n")
+            print("Wrong guess. " + str(limit - count) + " guesses remaining\n")
+        
+        elif count == 4:
+            time.sleep(1)
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |     O \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("Wrong guess. " + str(limit - count) + " last guess remaining\n")
+        
+        elif count == 5:
+            time.sleep(1)
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |     O \n"
+                  "  |    /|\ \n"
+                  "  |    / \ \n"
+                  "__|__\n")
+            print("Wrong guess. You are hanged!!!\n")
+            print("The word was:",already_guessed,word)
+            play_loop()
+    
+    if word == '_' * length:
+        print("Congrats! You have guessed the word correctly!")
+        play_loop()
+    elif count != limit:
+        hangman()
+
+
+main()
+hangman()
